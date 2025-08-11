@@ -19,6 +19,12 @@ void loop() {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     http.begin(iftttURL);
- 
+      int httpCode = http.GET();
+    if (httpCode == HTTP_CODE_OK) {
+      String payload = http.getString();
+      Serial.println(payload);
+      if (payload.indexOf("ON") >= 0) {
+        digitalWrite(RELAY_PIN, HIGH);
+
 
 
