@@ -8,6 +8,12 @@ const char* iftttURL = "https://maker.ifttt.com/trigger/device_toggle/with/key/Y
 void setup() {
   Serial.begin(115200);
   pinMode(RELAY_PIN, OUTPUT);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+}
 
 
 
