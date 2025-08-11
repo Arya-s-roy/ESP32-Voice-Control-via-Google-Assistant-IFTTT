@@ -1,3 +1,9 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
+#define RELAY_PIN 23
+
+const char* ssid = "YOUR_WIFI";
+const char* password = "YOUR_PASS";
+const char* iftttURL = "https://maker.ifttt.com/trigger/device_toggle/with/key/YOUR_KEY";
+
 
